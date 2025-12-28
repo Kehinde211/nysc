@@ -4,8 +4,8 @@
 //     status: Status;
 //     dueDate: string;
 // }
-
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+"use client"
+import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit"
 
 export interface ChatsState {
@@ -29,7 +29,7 @@ export const chatSlice = createSlice({
             state.value -= 1
         },
         reset: state => {
-            state.value === 0;
+            state.value = 0;
         },
         // Use the PayloadAction type to declare the contents of `action.payload`
         incrementByAmount: (state, action: PayloadAction<number>) => {
