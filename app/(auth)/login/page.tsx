@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -49,6 +50,7 @@ export const LoginPage = () => {
   };
 
   return (
+    <>
     <form onSubmit={submitDetails}>
       <input
         type="email"
@@ -68,5 +70,9 @@ export const LoginPage = () => {
 
       <button type="submit">Login</button>
     </form>
+
+    <p>New here?</p>
+    <Link href="/signup"><span className="">Sign Up</span></Link>
+    </>
   );
 };
